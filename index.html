@@ -6,18 +6,12 @@
   <title>Animal Noises in Ann Arbor</title>
   <meta name="description" content="Animal Noises in Ann Arbor, for EECS 351 Winter '26." />
 
-  <!-- Favicon placeholder -->
-  <!-- <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" /> -->
-
-  <!-- Google Fonts: Inter + Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,500;1,700&display=swap" rel="stylesheet" />
 
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- Font smoothing + Lenis base -->
   <style>
     * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
   </style>
@@ -25,16 +19,10 @@
 
 <body class="body">
 
-  <!-- CURSOR DOT -->
   <div class="cursor" aria-hidden="true"></div>
 
-  <!-- =====================================================
-       NAVIGATION
-  ====================================================== -->
   <nav class="navigation" aria-label="Main navigation">
     <div class="nav-top on-dark">
-
-      <!-- Logo -->
       <a href="#" class="nav-logo" aria-label="Home">
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
           <rect width="28" height="28" rx="6" fill="currentColor" opacity="0.15"/>
@@ -44,7 +32,6 @@
         <span class="nav-logo-name">ANinAA</span>
       </a>
 
-      <!-- Desktop menu -->
       <div class="nav-menu">
         <ul class="nav-list" role="list">
           <li class="nav-list-item"><a href="#prj">The Project</a></li>
@@ -53,15 +40,14 @@
           <li class="nav-list-item"><a href="#results">Results</a></li>
           <li class="nav-list-item"><a href="#team">Team</a></li>
         </ul>
-        <a href="#contact" class="nav-cta" aria-label="Contact me">
-          placeholder
+        <a href="#results" class="nav-cta" aria-label="Skip to Results">
+          View Results
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
             <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </a>
       </div>
 
-      <!-- Mobile hamburger -->
       <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -70,7 +56,6 @@
     </div>
   </nav>
 
-  <!-- Mobile overlay -->
   <div class="nav-overlay" role="dialog" aria-label="Mobile navigation">
     <ul class="nav-overlay-list" role="list">
       <li><a href="#prj">The Project</a></li>
@@ -81,542 +66,194 @@
     </ul>
   </div>
 
-  <!-- =====================================================
-       MAIN CONTENT
-  ====================================================== -->
   <div class="page">
 
-    <!-- ===================================================
-         HERO
-    ==================================================== -->
     <section class="section cc-hero" id="hero" aria-label="Introduction">
       <div class="hero-wrapper">
-
-        <!-- Eyebrow -->
         <div class="hero-eyebrow">
           <span class="hero-eyebrow-dot" aria-hidden="true"></span>
-          <span class="hero-eyebrow-text">placeholder</span>
+          <span class="hero-eyebrow-text">EECS 351 Final Project</span>
         </div>
 
-        <!-- Main title -->
         <div class="hero-title-block">
-          <h1 class="text-h1 cc-display hero-title" aria-label="Building software that matters">
+          <h1 class="text-h1 cc-display hero-title" aria-label="Identifying Animal Noises in Ann Arbor.">
             Identifying<br>Animal Noises<br>in Ann Arbor.
           </h1>
         </div>
 
-        <!-- Subtitle row -->
         <div class="hero-subtitle-row">
           <p class="hero-subtitle">
-            Launch page text
+            A digital signal processing approach to analyzing, filtering, and classifying urban wildlife audio.
           </p>
           <div class="hero-meta">
             <span class="hero-meta-label">For the Class</span>
-            <span class="hero-meta-value u-text-surface">EECS 351, at the University of Michigan</span>
+            <span class="hero-meta-value u-text-surface">EECS 351, University of Michigan</span>
           </div>
         </div>
 
-        <!-- Scroll indicator -->
         <div class="hero-scroll-indicator" aria-hidden="true">
           <span class="hero-scroll-line"></span>
           <span>Scroll</span>
         </div>
-
       </div>
     </section>
 
-    <!-- ===================================================
-         MARQUEE / SKILLS TICKER
-    ==================================================== -->
     <div class="marquee-section" aria-hidden="true">
       <div class="marquee-track">
-        <span class="marquee-item">React <span class="marquee-separator"></span></span>
-        <span class="marquee-item">TypeScript <span class="marquee-separator"></span></span>
-        <span class="marquee-item">Python <span class="marquee-separator"></span></span>
-        <span class="marquee-item">Node.js <span class="marquee-separator"></span></span>
-        <span class="marquee-item">PostgreSQL <span class="marquee-separator"></span></span>
-        <span class="marquee-item">Docker <span class="marquee-separator"></span></span>
-        <span class="marquee-item">GraphQL <span class="marquee-separator"></span></span>
-        <span class="marquee-item">AWS <span class="marquee-separator"></span></span>
-        <span class="marquee-item">Machine Learning <span class="marquee-separator"></span></span>
-        <span class="marquee-item">CI / CD <span class="marquee-separator"></span></span>
-        <span class="marquee-item">Figma <span class="marquee-separator"></span></span>
-        <span class="marquee-item">Open Source <span class="marquee-separator"></span></span>
-        <!-- JS doubles this for seamless loop -->
+        <span class="marquee-item">Fourier Transform <span class="marquee-separator"></span></span>
+        <span class="marquee-item">Spectrograms <span class="marquee-separator"></span></span>
+        <span class="marquee-item">Bandpass Filtering <span class="marquee-separator"></span></span>
+        <span class="marquee-item">MATLAB <span class="marquee-separator"></span></span>
+        <span class="marquee-item">Python / Librosa <span class="marquee-separator"></span></span>
+        <span class="marquee-item">Noise Reduction <span class="marquee-separator"></span></span>
+        <span class="marquee-item">Cross-Correlation <span class="marquee-separator"></span></span>
+        <span class="marquee-item">Sampling Rates <span class="marquee-separator"></span></span>
+        <span class="marquee-item">Frequency Domain <span class="marquee-separator"></span></span>
       </div>
     </div>
 
-    <!-- ===================================================
-         ABOUT / INTRO
-    ==================================================== -->
-    <section class="section cc-intro" id="about">
+    <section class="section cc-intro" id="prj">
       <div class="container">
         <div class="intro-wrapper">
-
-          <!-- Left: heading + bio -->
           <div class="intro-left">
             <div class="intro-tag" data-reveal data-delay="0">
               <span class="intro-tag-dot"></span>
-              About the Project
+              The Problem Space
             </div>
-
             <h2 class="text-h2 intro-heading" data-split-heading>
-              Project description<br>
-              <span class="text-italic"> and whatnot.</span>
+              What are we <span class="text-italic">listening</span> to?
             </h2>
-
             <p class="text-md intro-body" data-reveal data-delay="0.15">
-              Paragraph body explaining intent, approach, etc.
+              Ann Arbor is home to a diverse ecosystem of urban wildlife. By leveraging foundational Digital Signal Processing (DSP) techniques, this project aims to isolate, analyze, and identify the calls of local animals—such as squirrels, raccoons, and indigenous birds—from the chaotic background noise of a busy college town.
             </p>
-
             <div style="display:flex; gap:1rem; flex-wrap:wrap;" data-reveal data-delay="0.25">
-              <a href="#prj" class="btn-primary">
-                View our results
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                  <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+              <a href="#methods" class="btn-primary">
+                Explore our Methods
               </a>
-              <a href="#contact" class="btn-secondary">Abt the team?</a>
             </div>
           </div>
-
-          <!-- Right: stats grid -->
-          <!-- <div class="intro-right" data-reveal data-delay="0.1">
-            <div class="intro-stat-grid">
-              <div class="intro-stat">
-                <div class="text-h2 intro-stat-number" data-count="12" data-suffix="+">0+</div>
-                <div class="text-sm intro-stat-label">Projects shipped to production</div>
-              </div>
-              <div class="intro-stat">
-                <div class="text-h2 intro-stat-number" data-count="4" data-suffix="+ yrs">0</div>
-                <div class="text-sm intro-stat-label">Professional experience</div>
-              </div>
-              <div class="intro-stat">
-                <div class="text-h2 intro-stat-number" data-count="1200" data-suffix="+">0+</div>
-                <div class="text-sm intro-stat-label">GitHub contributions this year</div>
-              </div>
-              <div class="intro-stat">
-                <div class="text-h2 intro-stat-number" data-count="8" data-suffix="+">0+</div>
-                <div class="text-sm intro-stat-label">Open-source repos</div>
-              </div>
-            </div>
-          </div> -->
-
         </div>
       </div>
     </section>
 
-    <!-- ===================================================
-         PROJECT
-    ==================================================== -->
-    <section class="section cc-portfolio" id="projects">
+    <section class="section" id="methods" style="background-color: var(--color-surface-2);">
       <div class="container">
-
         <div class="section-header" data-reveal>
           <div>
-            <p class="section-label">Selected work</p>
-            <h2 class="text-h2" data-split-heading>Projects</h2>
+            <p class="section-label">Our Pipeline</p>
+            <h2 class="text-h2" data-split-heading>Methods &amp; Data</h2>
           </div>
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="btn-secondary">
-            All on GitHub
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-              <path d="M1 11L11 1M11 1H4M11 1V8" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
+        </div>
+
+        <div class="methods-grid" data-reveal data-delay="0.2">
+          <div class="method-card">
+            <h3 class="text-h4">1. Data Collection</h3>
+            <p class="text-sm u-text-muted">Audio recordings were taken across various locations including the Diag and Nichols Arboretum using standard microphones at a 44.1kHz sampling rate.</p>
+          </div>
+          <div class="method-card">
+            <h3 class="text-h4">2. Noise Filtering</h3>
+            <p class="text-sm u-text-muted">Applied high-pass and band-stop filters to remove low-frequency wind, traffic rumble, and standard 60Hz electrical interference.</p>
+          </div>
+          <div class="method-card">
+            <h3 class="text-h4">3. FFT &amp; Spectrograms</h3>
+            <p class="text-sm u-text-muted">Converted the time-domain signals into the frequency domain using Short-Time Fourier Transforms (STFT) to visualize distinct animal calls.</p>
+          </div>
+          <div class="method-card">
+            <h3 class="text-h4">4. Feature Classification</h3>
+            <p class="text-sm u-text-muted">Extracted peak frequencies and harmonic distributions to classify the isolated signals against a database of known animal noises.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cc-portfolio" id="results">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <div>
+            <p class="section-label">Findings</p>
+            <h2 class="text-h2" data-split-heading>Results</h2>
+          </div>
         </div>
 
         <div class="projects-grid">
-
-          <!-- Card 1 — large left -->
           <article class="project-card cc-span-7">
             <div class="project-image-wrap">
               <div class="project-image-placeholder accent-1" data-reveal-scale>
-                <!-- Replace with: <img src="assets/img/project-1.jpg" alt="Project 1 screenshot" loading="lazy" /> -->
-                <span style="font-size:2rem;">🚀</span>
+                <span style="font-size:3rem;">🐿️</span>
               </div>
             </div>
             <div class="project-body">
               <div class="project-tags">
-                <span class="project-tag">React</span>
-                <span class="project-tag">TypeScript</span>
-                <span class="project-tag">Node.js</span>
+                <span class="project-tag">High-Frequency</span>
+                <span class="project-tag">Chirp Analysis</span>
               </div>
-              <h3 class="text-h4 project-name">Project Alpha</h3>
+              <h3 class="text-h4 project-name">Eastern Gray Squirrels</h3>
               <p class="text-sm project-desc">
-                A full-stack SaaS platform for managing developer workflows, 
-                with real-time collaboration and an AI-powered code review assistant.
+                Successfully isolated squirrel alarm calls, noting peak frequencies commonly clustering around 5-7 kHz, easily distinguishable from ambient campus chatter.
               </p>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/yourusername/project-alpha" target="_blank" rel="noopener" class="project-link">
-                GitHub
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M1 11L11 1M11 1H4M11 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-              <a href="#" target="_blank" rel="noopener" class="project-link">
-                Live demo
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
             </div>
           </article>
 
-          <!-- Card 2 — right -->
           <article class="project-card cc-span-5">
             <div class="project-image-wrap tall">
               <div class="project-image-placeholder accent-2" data-reveal-scale>
-                <span style="font-size:2rem;">🤖</span>
+                <span style="font-size:3rem;">🐦</span>
               </div>
             </div>
             <div class="project-body">
               <div class="project-tags">
-                <span class="project-tag">Python</span>
-                <span class="project-tag">PyTorch</span>
-                <span class="project-tag">FastAPI</span>
+                <span class="project-tag">Harmonic Series</span>
+                <span class="project-tag">STFT</span>
               </div>
-              <h3 class="text-h4 project-name">ML Pipeline Framework</h3>
+              <h3 class="text-h4 project-name">Local Avian Species</h3>
               <p class="text-sm project-desc">
-                Modular training and inference framework that cuts model deployment 
-                time from days to minutes with a declarative YAML config.
+                Identified distinct harmonic signatures of Blue Jays and Cardinals through spectrogram mapping, despite significant wind noise.
               </p>
             </div>
-            <div class="project-footer">
-              <a href="https://github.com/yourusername/ml-pipeline" target="_blank" rel="noopener" class="project-link">
-                GitHub
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M1 11L11 1M11 1H4M11 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
           </article>
-
-          <!-- Card 3 — wide bottom left -->
-          <article class="project-card cc-span-4">
-            <div class="project-image-wrap">
-              <div class="project-image-placeholder accent-3" data-reveal-scale>
-                <span style="font-size:2rem;">🗄️</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <div class="project-tags">
-                <span class="project-tag">Go</span>
-                <span class="project-tag">PostgreSQL</span>
-                <span class="project-tag">Redis</span>
-              </div>
-              <h3 class="text-h4 project-name">QueryBench</h3>
-              <p class="text-sm project-desc">
-                Open-source database query profiler — visualizes slow queries and 
-                suggests index improvements automatically.
-              </p>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/yourusername/querybench" target="_blank" rel="noopener" class="project-link">
-                GitHub
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M1 11L11 1M11 1H4M11 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </article>
-
-          <!-- Card 4 -->
-          <article class="project-card cc-span-4">
-            <div class="project-image-wrap">
-              <div class="project-image-placeholder accent-4" data-reveal-scale>
-                <span style="font-size:2rem;">🌐</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <div class="project-tags">
-                <span class="project-tag">Next.js</span>
-                <span class="project-tag">Prisma</span>
-                <span class="project-tag">Stripe</span>
-              </div>
-              <h3 class="text-h4 project-name">Storefront Kit</h3>
-              <p class="text-sm project-desc">
-                A production-ready Next.js e-commerce starter with payments, auth, 
-                and a headless CMS integration.
-              </p>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/yourusername/storefront-kit" target="_blank" rel="noopener" class="project-link">
-                GitHub
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M1 11L11 1M11 1H4M11 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-              <a href="#" target="_blank" rel="noopener" class="project-link">
-                Live demo
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </article>
-
-          <!-- Card 5 — wide right -->
-          <article class="project-card cc-span-4">
-            <div class="project-image-wrap">
-              <div class="project-image-placeholder accent-5" data-reveal-scale>
-                <span style="font-size:2rem;">📡</span>
-              </div>
-            </div>
-            <div class="project-body">
-              <div class="project-tags">
-                <span class="project-tag">Rust</span>
-                <span class="project-tag">WebAssembly</span>
-              </div>
-              <h3 class="text-h4 project-name">Raze Parser</h3>
-              <p class="text-sm project-desc">
-                A blazing-fast log parser compiled to WASM — runs directly in the 
-                browser with zero server round-trips.
-              </p>
-            </div>
-            <div class="project-footer">
-              <a href="https://github.com/yourusername/raze-parser" target="_blank" rel="noopener" class="project-link">
-                GitHub
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                  <path d="M1 11L11 1M11 1H4M11 1V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </article>
-
         </div>
       </div>
     </section>
 
-    <!-- ===================================================
-         SKILLS
-    ==================================================== -->
-    <section class="section cc-skills" id="skills">
+    <section class="section" id="team" style="background-color: var(--color-surface-4);">
       <div class="container">
-
-        <div class="skills-layout">
-
-          <!-- Sticky left -->
-          <div class="skills-left">
-            <p class="section-label" data-reveal>Capabilities</p>
-            <h2 class="text-h2" data-split-heading>
-              Tools &amp;<br><span class="text-italic">technologies</span>
-            </h2>
-            <p class="text-md u-text-muted" style="margin-top:1.25rem;max-width:28ch;line-height:1.75;" data-reveal data-delay="0.1">
-              A curated set of tools I reach for when building real products — 
-              chosen for reliability, ecosystem, and developer ergonomics.
-            </p>
-          </div>
-
-          <!-- Skills grid -->
-          <div class="skills-right">
-
-            <div class="skill-category">
-              <p class="skill-category-label">Frontend</p>
-              <div class="skill-pills">
-                <span class="skill-pill"><span class="skill-pill-icon">⚛️</span> React</span>
-                <span class="skill-pill"><span class="skill-pill-icon">🔷</span> TypeScript</span>
-                <span class="skill-pill"><span class="skill-pill-icon">▲</span> Next.js</span>
-                <span class="skill-pill"><span class="skill-pill-icon">💚</span> Vue.js</span>
-                <span class="skill-pill"><span class="skill-pill-icon">🎨</span> Tailwind CSS</span>
-                <span class="skill-pill"><span class="skill-pill-icon">🎞️</span> Framer Motion</span>
-                <span class="skill-pill"><span class="skill-pill-icon">🟩</span> GSAP</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <p class="skill-category-label">Backend</p>
-              <div class="skill-pills">
-                <span class="skill-pill"><span class="skill-pill-icon">🟢</span> Node.js</span>
-                <span class="skill-pill"><span class="skill-pill-icon">🐍</span> Python</span>
-                <span class="skill-pill"><span class="skill-pill-icon">🦀</span> Rust</span>
-                <span class="skill-pill"><span class="skill-pill-icon">🐹</span> Go</span>
-                <span class="skill-pill"><span class="skill-pill-icon">🚀</span> FastAPI</span>
-                <span class="skill-pill"><span class="skill-pill-icon">🔷</span> GraphQL</span>
-                <span class="skill-pill"><span class="skill-pill-icon">🔗</span> REST APIs</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <p class="skill-category-label">Data &amp; ML</p>
-              <div class="skill-pills">
-                <span class="skill-pill"><span class="skill-pill-icon">🐘</span> PostgreSQL</span>
-                <span class="skill-pill"><span class="skill-pill-icon">🍃</span> MongoDB</span>
-                <span class="skill-pill"><span class="skill-pill-icon">🔴</span> Redis</span>
-                <span class="skill-pill"><span class="skill-pill-icon">🔥</span> PyTorch</span>
-                <span class="skill-pill"><span class="skill-pill-icon">🧠</span> Hugging Face</span>
-                <span class="skill-pill"><span class="skill-pill-icon">📊</span> Pandas</span>
-              </div>
-            </div>
-
-            <div class="skill-category">
-              <p class="skill-category-label">Infrastructure &amp; Tooling</p>
-              <div class="skill-pills">
-                <span class="skill-pill"><span class="skill-pill-icon">🐳</span> Docker</span>
-                <span class="skill-pill"><span class="skill-pill-icon">☸️</span> Kubernetes</span>
-                <span class="skill-pill"><span class="skill-pill-icon">☁️</span> AWS</span>
-                <span class="skill-pill"><span class="skill-pill-icon">🏗️</span> Terraform</span>
-                <span class="skill-pill"><span class="skill-pill-icon">⚡</span> GitHub Actions</span>
-                <span class="skill-pill"><span class="skill-pill-icon">🔍</span> Datadog</span>
-              </div>
-            </div>
-
-          </div>
+        <div class="section-header" data-reveal>
+          <h2 class="text-h2" data-split-heading>The Team</h2>
         </div>
-      </div>
-    </section>
-
-    <!-- ===================================================
-         EXPERIENCE
-    ==================================================== -->
-    <section class="section cc-experience" id="experience">
-      <div class="container">
-
-        <div style="margin-bottom:3rem;" data-reveal>
-          <p class="section-label">Work history</p>
-          <h2 class="text-h2" data-split-heading>Experience</h2>
-        </div>
-
-        <div class="experience-list">
-
-          <div class="experience-item">
-            <span class="experience-date">2023 — Present</span>
-            <div>
-              <div class="experience-role">Senior Software Engineer</div>
-              <div class="experience-company">Company Name</div>
-              <p class="experience-desc">
-                Led architecture decisions for a microservices rewrite, reducing 
-                average API latency by 60%. Mentored a team of 4 engineers and drove 
-                adoption of TypeScript across the org.
-              </p>
-              <div class="experience-tags">
-                <span class="experience-tag">React</span>
-                <span class="experience-tag">Node.js</span>
-                <span class="experience-tag">AWS</span>
-                <span class="experience-tag">Postgres</span>
-              </div>
-            </div>
+        <p class="text-md u-text-muted" data-reveal>
+          We are undergraduate engineering students at the University of Michigan with a passion for signal processing.
+        </p>
+        <div style="display: flex; gap: 2rem; margin-top: 2rem;" data-reveal>
+          <div class="team-member">
+            <h3 class="text-h5">Student 1</h3>
+            <p class="text-sm u-text-muted">Data Collection & Filtering</p>
           </div>
-
-          <div class="experience-item">
-            <span class="experience-date">2021 — 2023</span>
-            <div>
-              <div class="experience-role">Full-Stack Engineer</div>
-              <div class="experience-company">Startup / Agency</div>
-              <p class="experience-desc">
-                Shipped 3 client products from MVP to launch. Owned the full 
-                development lifecycle — design, build, test, deploy.
-              </p>
-              <div class="experience-tags">
-                <span class="experience-tag">Next.js</span>
-                <span class="experience-tag">Python</span>
-                <span class="experience-tag">Docker</span>
-              </div>
-            </div>
+          <div class="team-member">
+            <h3 class="text-h5">Student 2</h3>
+            <p class="text-sm u-text-muted">Algorithm Design & FFT</p>
           </div>
-
-          <div class="experience-item">
-            <span class="experience-date">2019 — 2021</span>
-            <div>
-              <div class="experience-role">Software Engineer I</div>
-              <div class="experience-company">First Job</div>
-              <p class="experience-desc">
-                Built and maintained internal tooling for a 200-person engineering 
-                org. Wrote the CI/CD pipeline that's still running today.
-              </p>
-              <div class="experience-tags">
-                <span class="experience-tag">Vue.js</span>
-                <span class="experience-tag">Go</span>
-                <span class="experience-tag">Jenkins</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <div style="margin-top:2.5rem;" data-reveal>
-          <a href="assets/resume.pdf" target="_blank" rel="noopener" class="btn-secondary">
-            Download résumé
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-              <path d="M7 2v8M3 7l4 4 4-4M2 12h10" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===================================================
-         CTA / CONTACT
-    ==================================================== -->
-    <section class="section cc-cta" id="contact">
-      <div class="cta-bg-text" aria-hidden="true">HELLO</div>
-      <div class="container">
-        <div class="cta-wrapper">
-          <p class="cta-eyebrow" data-reveal>Open to opportunities</p>
-          <h2 class="text-h2 cta-heading u-text-surface" data-split-heading>
-            Have a project<br>in mind?
-          </h2>
-          <p class="cta-subhead" data-reveal data-delay="0.15">
-            I'm always interested in hearing about new problems to solve. 
-            Whether it's a full-time role, freelance project, or just a chat 
-            about technology — my inbox is open.
-          </p>
-          <a href="mailto:your@email.com" class="cta-email-link" data-reveal data-delay="0.2">
-            your@email.com
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M3 10h14M10 3l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-          <div class="cta-buttons" data-reveal data-delay="0.3">
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="btn-white">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-              </svg>
-              GitHub
-            </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener" class="btn-outline-white">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-              </svg>
-              LinkedIn
-            </a>
+          <div class="team-member">
+            <h3 class="text-h5">Student 3</h3>
+            <p class="text-sm u-text-muted">Web & Visualizations</p>
           </div>
         </div>
       </div>
     </section>
 
   </div>
-  <!-- /page -->
 
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
-        <span class="footer-logo">Your Name</span>
-        <p class="footer-copy">© 2025 · Built with care</p>
-        <nav class="footer-links" aria-label="Footer navigation">
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="mailto:your@email.com">Email</a>
-        </nav>
+        <span class="footer-logo">ANinAA / EECS 351</span>
+        <p class="footer-copy">© 2026 · University of Michigan</p>
       </div>
     </div>
   </footer>
 
-  <!-- =====================================================
-       SCRIPTS
-       Load order matters: GSAP core → plugins → Lenis → app
-  ====================================================== -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
-  <!-- SplitText is a GSAP Club plugin; use the CDN only if you have a license.
-       Otherwise the hero animation gracefully falls back via the JS fallback path.
-       With a Club GSAP license, host the file yourself and uncomment: -->
-  <!-- <script src="assets/js/SplitText.min.js"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
 
 </body>

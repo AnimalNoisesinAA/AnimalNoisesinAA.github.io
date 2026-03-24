@@ -1,6 +1,6 @@
 /* ============================================================
    main.js  ·  Project site animations & interactions
-   Dependencies (CDN): GSAP, ScrollTrigger, SplitText, Lenis
+   Dependencies (CDN): GSAP, ScrollTrigger, Lenis
    ============================================================ */
 
 "use strict";
@@ -12,9 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     lerp: 0.1,
     wheelMultiplier: 0.7,
     infinite: false,
-    gestureOrientation: "vertical",
-    normalizeWheel: false,
-    smoothTouch: false,
+    gestureOrientation: "vertical"
   });
 
   function raf(time) {
@@ -30,17 +28,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* 2. GSAP REGISTER PLUGINS */
   gsap.registerPlugin(ScrollTrigger);
-  if (typeof SplitText !== "undefined") {
-    gsap.registerPlugin(SplitText);
-  }
 
-  /* 3. NAVIGATION */
+  /* 3. SET INITIAL STATES VIA JS (Prevents invisible text bug) */
+  gsap.set("[data-reveal]", { opacity: 0, y: 24 });
+  gsap.set("[data-reveal-scale]", { opacity: 0, scale: 0.9 });
+
+  /* 4. NAVIGATION */
   const navTop = document.querySelector(".nav-top");
   const heroSection = document.querySelector(".section.cc-hero");
 
   if (navTop && heroSection) {
     navTop.classList.add("on-dark");
-
     const navObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -67,8 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
       hamburger.setAttribute("aria-expanded", isOpen);
       if (isOpen) {
         lenis.stop();
-        gsap.fromTo(
-          overlayLinks,
+        gsap.fromTo(overlayLinks,
           { opacity: 0, y: 30 },
           { opacity: 1, y: 0, stagger: 0.07, duration: 0.5, ease: "power3.out", delay: 0.2 }
         );
@@ -85,58 +82,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* 4. HERO ENTRANCE */
+  /* 5. HERO ENTRANCE */
   const heroTitle = document.querySelector(".hero-title");
-
-  if (heroTitle && typeof SplitText !== "undefined") {
-    const split = new SplitText(heroTitle, {
-      type: "chars,words",
-      mask: "chars",
-      charsClass: "split-letter",
-    });
-
-    const heroTl = gsap.timeline({ defaults: { ease: "power4.out" } });
-
-    heroTl
-      .from(split.chars, {
-        yPercent: 110,
-        duration: 1,
-        stagger: { each: 0.035, from: "start" },
-      })
-      .from(".hero-eyebrow", { opacity: 0, y: 16, duration: 0.6 }, "-=0.5")
-      .from(".hero-subtitle", { opacity: 0, y: 20, duration: 0.7, ease: "power3.out" }, "-=0.4")
-      .from(".hero-meta", { opacity: 0, y: 16, duration: 0.5 }, "-=0.4")
-      .from(".hero-scroll-indicator", { opacity: 0, duration: 0.5 }, "-=0.2");
-  } else if (heroTitle) {
+  if (heroTitle) {
     gsap.from(heroTitle, { opacity: 0, y: 40, duration: 1, ease: "power4.out" });
     gsap.from(".hero-subtitle", { opacity: 0, y: 20, duration: 0.7, delay: 0.4 });
+    gsap.from(".hero-meta", { opacity: 0, y: 20, duration: 0.7, delay: 0.5 });
   }
 
-  /* 5. SCROLL-TRIGGERED REVEALS */
+  /* 6. SCROLL-TRIGGERED REVEALS */
   const revealEls = document.querySelectorAll("[data-reveal]");
   revealEls.forEach((el) => {
     const delay = parseFloat(el.dataset.delay || 0);
-    const duration = parseFloat(el.dataset.duration || 0.75);
-    gsap.fromTo(el, 
-      { opacity: 0, y: 30 },
-      { opacity: 1, y: 0, duration, delay, ease: "power3.out", scrollTrigger: {
-        trigger: el, start: "top 88%", toggleActions: "play none none none"
-      }}
-    );
+    gsap.to(el, {
+      opacity: 1, y: 0, duration: 0.75, delay: delay, ease: "power3.out",
+      scrollTrigger: { trigger: el, start: "top 88%", toggleActions: "play none none none" }
+    });
   });
 
   const scaleRevealEls = document.querySelectorAll("[data-reveal-scale]");
   scaleRevealEls.forEach((el) => {
     const delay = parseFloat(el.dataset.delay || 0);
-    gsap.fromTo(el, 
-      { opacity: 0, scale: 0.9 },
-      { opacity: 1, scale: 1, duration: 1, delay, ease: "power3.out", scrollTrigger: {
-        trigger: el, start: "top 85%", toggleActions: "play none none none"
-      }}
-    );
+    gsap.to(el, {
+      opacity: 1, scale: 1, duration: 0.8, delay: delay, ease: "power3.out",
+      scrollTrigger: { trigger: el, start: "top 85%", toggleActions: "play none none none" }
+    });
   });
 
-  /* 6. CURSOR / HOVER FX */
+  /* 7. CURSOR / HOVER FX */
   const cursor = document.querySelector(".cursor");
   if (cursor && !window.matchMedia("(hover: none)").matches) {
     document.addEventListener("mousemove", (e) => {
@@ -146,9 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const darkSections = document.querySelectorAll(".on-dark, .cc-hero, .marquee-section");
     darkSections.forEach((sec) => {
       ScrollTrigger.create({
-        trigger: sec,
-        start: "top center",
-        end: "bottom center",
+        trigger: sec, start: "top center", end: "bottom center",
         onEnter: () => cursor.classList.add("on-dark"),
         onLeave: () => cursor.classList.remove("on-dark"),
         onEnterBack: () => cursor.classList.add("on-dark"),
@@ -156,14 +127,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    const hoverEls = document.querySelectorAll("a, button, .project-card");
+    const hoverEls = document.querySelectorAll("a, button, .project-card, .method-card");
     hoverEls.forEach((el) => {
       el.addEventListener("mouseenter", () => cursor.classList.add("hover"));
       el.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
     });
   }
 
-  /* 7. SMOOTH ANCHOR SCROLL */
+  /* 8. SMOOTH ANCHOR SCROLL */
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (e) => {
       const target = document.querySelector(anchor.getAttribute("href"));
